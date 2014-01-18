@@ -18,11 +18,11 @@ void BF_matching(char* T, int n, char* P, int m)
 	for(i = 0; i <= n-m; i++)
 	{
 		for(j = 0; j < m; j++)
+		{
+			count++;   // benchmark
 			if(P[j] != T[i+j])
 				break;
-			else
-				count++;   // benchmark
-
+		}
 		if(j == m) // MATCH!
 		{
 			for(k = 0; k < i; k++)
@@ -105,7 +105,7 @@ void KMP_matching(char* T, int n, char* P, int m)
 	/* Compute prefix array pi[] */
 	for(q = 2; q <= m; q++)
 	{
-		while(k > 0 && P[k+1] != P[q-1])
+		while(k > 0 && P[k] != P[q-1])
 			k = pi[k-1];
 		if(P[k] == P[q-1])
 			k++;

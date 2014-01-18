@@ -25,7 +25,7 @@ int main()
 {
 	srand(time(NULL));
 	int i;
-	char P[] = "AAA";
+	char P[] = "ABABA";
 	char T[MAX_LEN];
 	for(i = 0; i < CHARSET_LEN; i++)
 		Indexhash[Charset[i] - 'A'] = i;
